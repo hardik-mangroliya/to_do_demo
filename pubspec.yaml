@@ -38,6 +38,9 @@ dependencies:
   firebase_auth: ^3.6.0
   google_sign_in: ^5.4.0
   cloud_firestore: ^3.4.2
+  shared_preferences: ^2.0.15
+  rxdart: ^0.27.5
+  auth: ^8.1.0
 
 dev_dependencies:
   flutter_test:
