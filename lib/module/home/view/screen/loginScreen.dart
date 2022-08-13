@@ -1,6 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import '../../../../core/googleSignIn/authFunction.dart';
+import 'package:to_do_demo/core/functions/authFunction.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -10,8 +10,6 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  final FocusNode _uidFocusNode = FocusNode();
-
   Future<FirebaseApp> _initializedFirebase() async {
     FirebaseApp firebaseApp = await Firebase.initializeApp();
 

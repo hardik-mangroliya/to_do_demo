@@ -1,21 +1,12 @@
 import 'package:auth/auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:to_do_demo/prefrences.dart';
+import 'package:to_do_demo/utils/prefrences/prefrences.dart';
 import '../../module/home/view/screen/toDoScreen.dart';
 
 final FirebaseAuth auth = FirebaseAuth.instance;
 
 class authFunction {
-  static Stream<QuerySnapshot<Map<String, dynamic>>> getData() {
-    String userEmail = (FirebaseAuth.instance.currentUser!).email ?? '';
-    var userTodo = FirebaseFirestore.instance
-        .collection('products')
-        .where("email", isEqualTo: userEmail)
-        .snapshots();
-    return userTodo;
-  }
-
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _priceController = TextEditingController();
 
@@ -71,7 +62,7 @@ class authFunction {
                       await _products.add({
                         "name": name,
                         "price": price,
-                        "email": FirebaseAuth.instance.currentUser?.email ?? ''
+                        "email": FirebaseAuth.instance.currentUser?.email ?? '',
                       });
                     }
 
@@ -135,5 +126,14 @@ class authFunction {
     if (await GoogleSignIn().isSignedIn()) {
       await GoogleSignIn().signOut();
     }
+  }
+
+  static Stream<QuerySnapshot<Map<String, dynamic>>> getData() {
+    String userEmail = (FirebaseAuth.instance.currentUser!).email ?? '';
+    var userTodo = FirebaseFirestore.instance
+        .collection('products')
+        .where("email", isEqualTo: userEmail)
+        .snapshots();
+    return userTodo;
   }
 }

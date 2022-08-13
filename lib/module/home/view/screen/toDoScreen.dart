@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import '../../../../core/googleSignIn/authFunction.dart';
+import 'package:to_do_demo/core/functions/authFunction.dart';
 import 'loginScreen.dart';
 
 class ToDoScreen extends StatefulWidget {
