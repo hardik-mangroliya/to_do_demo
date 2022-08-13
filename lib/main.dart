@@ -26,13 +26,14 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home: MyPrefenrces.isUserLoggedIn()
-            ? const ToDoScreen()
-            : const LoginScreen());
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: MyPrefenrces.isUserLoggedIn()
+          ? const ToDoScreen()
+          : const LoginScreen(),
+    );
   }
 }
