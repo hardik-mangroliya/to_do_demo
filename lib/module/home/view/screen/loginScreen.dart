@@ -29,6 +29,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final AuthFunction = authFunction();
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("Google Sign-in"),
@@ -57,7 +59,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       style: TextStyle(
                           color: Colors.white, fontWeight: FontWeight.bold),
                     ),
-                    onPressed: () => signInWithGoogle(context),
+                    onPressed: () => AuthFunction.signInWithGoogle(context),
                   ),
                 )
               ],
